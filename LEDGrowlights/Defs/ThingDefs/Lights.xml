@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<Defs>
+  <ThingDef Name="GrowLightBase" ParentName="LampBase" Abstract="True">
+    <defName>GrowLightBase</defName>
+    <label>Grow Light Base</label>
+    <description>BaseClass for LED Grow Lights</description>
+
+    <fillPercent>0</fillPercent>
+    <passability>Standable</passability>
+    <blockWind>False</blockWind>
+    <clearBuildingArea>False</clearBuildingArea>
+    <tickerType>Rare</tickerType>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <selectable>true</selectable>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <castEdgeShadows>false</castEdgeShadows>
+    <pathCost>0</pathCost>
+    <drawerType>RealtimeOnly</drawerType>
+    <blockLight>False</blockLight>
+    <holdsRoof>False</holdsRoof>
+
+    <building>
+      <ai_chillDestination>False</ai_chillDestination>
+      <isInert>True</isInert>
+      <isEdifice>False</isEdifice>
+    </building>
+
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <graphicData>
+      <color>(1.0, 1.0, 1.0, 0.4)</color>
+      <shaderType>Transparent</shaderType>
+    </graphicData>
+
+    <statBases>
+      <WorkToBuild>200</WorkToBuild>
+      <Mass>4</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+
+
+    <researchPrerequisites>
+      <li>LEDGrowlight</li>
+    </researchPrerequisites>
+
+    <comps>
+      <li Class="CompProperties_Schedule">
+        <!-- Match plant growing times -->
+        <startTime>0.25</startTime>
+        <endTime>0.8</endTime>
+        <offMessage>Off for plant resting period</offMessage>
+      </li>
+    </comps>
+
+
+  </ThingDef>
+
+  <ThingDef ParentName="GrowLightBase">
+    <defName>GrowLightA</defName>
+    <label>175W LED Growlight</label>
+    <description>Small LED growlight.</description>
+
+    <graphicData>
+      <texPath>LEDA</texPath>
+    </graphicData>
+
+    <costList>
+      <Steel>15</Steel>
+    </costList>
+
+    <comps>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>3.0</overlightRadius>
+        <glowRadius>6</glowRadius>
+        <glowColor>(255, 0, 255, 0.5)</glowColor>
+      </li>
+
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>175</basePowerConsumption>
+      </li>
+
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>2</heatPerSecond>
+      </li>
+    </comps>
+
+    <specialDisplayRadius>1.45</specialDisplayRadius>
+  </ThingDef>
+
+  <ThingDef ParentName="GrowLightBase">
+    <defName>GrowLightB</defName>
+    <label>300W LED Growlight</label>
+    <description>Medium LED growlight.</description>
+
+    <graphicData>
+      <texPath>LEDB</texPath>
+      <drawSize>(2,1)</drawSize>
+    </graphicData>
+    <size>(2,1)</size>
+    <rotatable>True</rotatable>
+
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+
+    <comps>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>4</overlightRadius>
+        <glowRadius>12</glowRadius>
+        <glowColor>(255, 0, 255, 0.75)</glowColor>
+      </li>
+
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>300</basePowerConsumption>
+      </li>
+
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>4</heatPerSecond>
+      </li>
+    </comps>
+
+    <specialDisplayRadius>2.85</specialDisplayRadius>
+  </ThingDef>
+
+
+  <ThingDef ParentName="GrowLightBase">
+    <defName>GrowLightC</defName>
+    <label>1200W LED Growlight</label>
+    <description>Large LED growlight.</description>
+
+    <graphicData>
+      <texPath>LEDC</texPath>
+      <drawSize>(3,1)</drawSize>
+    </graphicData>
+    <size>(3,1)</size>
+    <rotatable>True</rotatable>
+
+    <costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+
+   <comps>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>7.0</overlightRadius>
+        <glowRadius>24</glowRadius>
+        <glowColor>(255, 0, 255, 0.75)</glowColor>
+      </li>
+
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>True</shortCircuitInRain>
+        <basePowerConsumption>1200</basePowerConsumption>
+      </li>
+
+      <li Class="CompProperties_HeatPusher">
+        <compClass>CompHeatPusherPowered</compClass>
+        <heatPerSecond>8</heatPerSecond>
+      </li>
+    </comps>
+
+    <specialDisplayRadius>5.8</specialDisplayRadius>
+  </ThingDef>
+</Defs>
